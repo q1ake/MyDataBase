@@ -20,4 +20,9 @@ class Adventurer {
     reputation = 0;
     rank = "Новичок";
   }
+  Adventurer(int id, std::string name, std::string surname, std::string role,
+             int level, int reputation) {
+    this->id = id;
+    this->name = name;
+  }
 };
