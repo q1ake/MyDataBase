@@ -11,6 +11,7 @@ class Adventurer {
   std::string rank;
 
  public:
+  void updateRank();
   Adventurer()
       : id(0),
         name(""),
@@ -26,5 +27,7 @@ class Adventurer {
         surname(surname),
         role(role),
         level(level),
-        reputation(reputation) {}
+        reputation(reputation) {
+    updateRank();
+  }
 };
