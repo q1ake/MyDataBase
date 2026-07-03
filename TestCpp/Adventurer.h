@@ -30,4 +30,11 @@ class Adventurer {
         reputation(reputation) {
     updateRank();
   }
+  std::string GetName() const { return name; }
+  int GetId() const { return id; }
+  std::string GetSurname() const { return surname; }
+  std::string GetRole() const { return role; }
+  int GetLevel() const { return level; }
+  int GetReputation() const { return reputation; }
+  std::string GetRank() const { return rank; }
 };
