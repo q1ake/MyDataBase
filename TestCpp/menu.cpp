@@ -3,6 +3,7 @@
 #include <windows.h>
 
 #include "constants.h"
+#include "register.h"
 using namespace constants;
 #include <iostream>
 void menu() {
@@ -25,7 +26,7 @@ label:
   std::cin >> choice;
   switch (choice) {
     case ChooseOne: {
-      std::cout << "Вы выбрали число 1" << std::endl;
+      void Register();
       break;
     }
     case ChooseTwo: {

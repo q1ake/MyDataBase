@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "register.h"
 class Adventurer {
  private:
   int id;
@@ -37,4 +38,5 @@ class Adventurer {
   int GetLevel() const { return level; }
   int GetReputation() const { return reputation; }
   std::string GetRank() const { return rank; }
+  friend void Register();
 };
