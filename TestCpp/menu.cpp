@@ -2,6 +2,8 @@
 
 #include <windows.h>
 
+#include "constants.h"
+using namespace constants;
 #include <iostream>
 void menu() {
   SetConsoleOutputCP(CP_UTF8);
@@ -21,32 +23,30 @@ label:
   int choice;
   std::cout << "Ваш выбор: ";
   std::cin >> choice;
-  if (1 <= choice <= 5) {
-    switch (choice) {
-      case 1: {
-        std::cout << "Вы выбрали число 1" << std::endl;
-        break;
-      }
-      case 2: {
-        std::cout << "Вы выбрали число 2" << std::endl;
-        break;
-      }
-      case 3: {
-        std::cout << "Вы выбрали число 3" << std::endl;
-        break;
-      }
-      case 4: {
-        std::cout << "Вы выбрали число 4" << std::endl;
-        break;
-      }
-      case 5: {
-        std::cout << "Вы выбрали число 5" << std::endl;
-        break;
-      }
-      default:
-        std::cout << "Выберите число от 1 до 5!" << std::endl;
-        goto label;
-        break;
+  switch (choice) {
+    case ChooseOne: {
+      std::cout << "Вы выбрали число 1" << std::endl;
+      break;
     }
+    case ChooseTwo: {
+      std::cout << "Вы выбрали число 2" << std::endl;
+      break;
+    }
+    case ChooseThree: {
+      std::cout << "Вы выбрали число 3" << std::endl;
+      break;
+    }
+    case ChooseFour: {
+      std::cout << "Вы выбрали число 4" << std::endl;
+      break;
+    }
+    case ChooseFive: {
+      std::cout << "Вы выбрали число 5" << std::endl;
+      break;
+    }
+    default:
+      std::cout << "Выберите число от 1 до 5!" << std::endl;
+      goto label;
+      break;
   }
 }
