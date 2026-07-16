@@ -1,5 +1,3 @@
 #pragma once
 void Register();
-void UniqueId() {
-
-}
+void UniqueId();

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+
 #include "register.h"
 class Adventurer {
  private:
