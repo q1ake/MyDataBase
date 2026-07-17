@@ -24,10 +24,11 @@ label:
   int choice;
   std::cout << "Ваш выбор: ";
   std::cin >> choice;
+  std::cout << "\n";
   switch (choice) {
     case ChooseOne: {
-      void Register();
-      break;
+      Register();
+      goto label;
     }
     case ChooseTwo: {
       std::cout << "Вы выбрали число 2" << std::endl;

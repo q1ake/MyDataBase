@@ -1,3 +1,3 @@
 #pragma once
 void Register();
-void UniqueId();
+bool UniqueId(int id);

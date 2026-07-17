@@ -8,20 +8,55 @@ void Register() {
   std::string name;
   std::string surname;
   std::string role;
-  int level = 0, reputation = 0, id = 0;
-  Adventurer enemy(id, name, surname, role, level, reputation);
+  int level, reputation, id;
   std::ofstream fout;
-  fout.open("Adventure.txt");
-  std::cout << "Введите Id: ";
-  std::cin >> enemy.id;
+line:
+  std::cout << "Введите id: ";
+  std::cin >> id;
+  if (id < 0) {
+    std::cout << "Введите ID больше 0 " << std::endl;
+    goto line;
+  }
+  if (UniqueId(id) == true) {
+    std::cout << "Данный ID занят. Выберите другой" << std::endl;
+    goto line;
+  }
   std::cout << "Введите имя: ";
-  std::cin >> enemy.name;
+  std::cin >> name;
   std::cout << "Введите Фамилию: ";
-  std::cin >> enemy.surname;
+  std::cin >> surname;
   std::cout << "Введите Роль: ";
-  std::cin >> enemy.role;
+  std::cin >> role;
   std::cout << "Введите Уровень: ";
-  std::cin >> enemy.level;
+  std::cin >> level;
   std::cout << "Введите репутацию: ";
-  std::cin >> enemy.reputation;
+  std::cin >> reputation;
+  Adventurer enemy(id, name, surname, role, level, reputation);
+  fout.open("Adventure.txt", std::ios::app);
+  if (fout.is_open()) {
+    fout << id << " " << name << " " << surname << " " << role << " " << level
+         << " " << reputation << " " << enemy.GetRank() << "\n";
+    fout.close();
+    std::cout << "\nАвантюрист успешно зарегистрирован!\n";
+  }
+}
+bool UniqueId(int id) {
+  std::ifstream fout("Adventure.txt");
+  if (!fout.is_open()) {
+    return false;
+  }
+  int exsiting_id;
+  std::string name;
+  std::string surname;
+  std::string role;
+  int level;
+  int reputation;
+  std::string rank;
+  while (fout >> exsiting_id >> name >> surname >> role >> level >>
+         reputation >> rank) {
+    if (exsiting_id == id) {
+      return true;
+    }
+  }
+  return false;
 }
