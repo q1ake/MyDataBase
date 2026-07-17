@@ -1,19 +1,23 @@
 #include "Adventurer.h"
 
+#include "constants.h"
+using namespace constants;
 void Adventurer::updateRank() {
-  if (reputation <= 49) {
+  if (reputation <= BeginnerRep) {
     rank = "Новичок";
-  } else if (reputation >= 50 && reputation <= 99) {
+  } else if (reputation >= AdventurerRepStart &&
+             reputation <= AdventurerRepEnd) {
     rank = "Авантюрист";
-  } else if (reputation >= 100 && reputation <= 199) {
+  } else if (reputation >= GuardianRepStart && reputation <= GuardianRepEnd) {
     rank = "Страж";
-  } else if (reputation >= 200 && reputation <= 299) {
+  } else if (reputation >= VeteranRepStart && reputation <= VeteranRepEnd) {
     rank = "Ветеран";
-  } else if (reputation >= 300 && reputation <= 349) {
+  } else if (reputation >= HeroRepStart && reputation <= HeroRepEnd) {
     rank = "Герой";
-  } else if (reputation >= 350 && reputation <= 399) {
+  } else if (reputation >= RenownedHeroRepStart &&
+             reputation <= RenownedHeroRepEnd) {
     rank = "Прославленный Герой";
-  } else if (reputation >= 400) {
+  } else if (reputation >= LegendRep) {
     rank = "Легенда";
   }
 }

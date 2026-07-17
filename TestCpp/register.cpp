@@ -21,15 +21,15 @@ line:
     std::cout << "Данный ID занят. Выберите другой" << std::endl;
     goto line;
   }
-  std::cout << "Введите имя: ";
+  std::cout << "Введите имя(Строка): ";
   std::cin >> name;
-  std::cout << "Введите Фамилию: ";
+  std::cout << "Введите Фамилию(Строка): ";
   std::cin >> surname;
-  std::cout << "Введите Роль: ";
+  std::cout << "Введите Роль(Строка): ";
   std::cin >> role;
-  std::cout << "Введите Уровень: ";
+  std::cout << "Введите Уровень(Число): ";
   std::cin >> level;
-  std::cout << "Введите репутацию: ";
+  std::cout << "Введите репутацию(Число): ";
   std::cin >> reputation;
   Adventurer enemy(id, name, surname, role, level, reputation);
   fout.open("Adventure.txt", std::ios::app);

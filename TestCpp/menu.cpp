@@ -29,6 +29,7 @@ label:
     case ChooseOne: {
       Register();
       goto label;
+      break;
     }
     case ChooseTwo: {
       std::cout << "Вы выбрали число 2" << std::endl;
